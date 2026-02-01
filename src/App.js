@@ -17,8 +17,10 @@ L.Icon.Default.mergeOptions({
 const routePoints = [
   { name: "Tokyo Station", coordinates: [35.6812, 139.7671] },
   { name: "Shinjuku Gyoen", coordinates: [35.6852, 139.7107] },
+
   // This is an explicitly declared "via" point to guide the route. It has no name.
   { coordinates: [39.7, 139.75] },
+
   { name: "Ueno Park", coordinates: [35.7145, 139.7738] },
   { name: "Shibuya Crossing", coordinates: [35.6591, 139.7037] },
   { name: "Imperial Palace East Garden", coordinates: [35.6881, 139.7533] },
