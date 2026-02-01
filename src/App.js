@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
 
@@ -65,6 +65,9 @@ function App() {
   const defaultCenter = [35.6895, 139.6917]; // Centered around central Tokyo
   const defaultZoom = 12;
 
+  const polylinePositions = japanLocations.map(location => location.coordinates);
+  const routeLineOptions = { color: '#6A0DAD', dashArray: '5, 10' }; // A nice purple color
+
   return (
     <div className="App">
       <h1 className="app-title">My Manhole Card Collection in Japan</h1>
@@ -99,6 +102,7 @@ function App() {
             </Popup>
           </Marker>
         ))}
+        <Polyline pathOptions={routeLineOptions} positions={polylinePositions} />
       </MapContainer>
     </div>
   );
