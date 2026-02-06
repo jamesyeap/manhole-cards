@@ -1,0 +1,202 @@
+[
+  {
+    "id": "13-100-A001",
+    "name": "Tokyo 23 Wards - Sewer Design",
+    "ward": "Chiyoda",
+    "description": "Features the classic Tokyo metropolitan sewer design with cherry blossoms and the city crest, representing the capital's sewage system.",
+    "coordinates": [35.6862, 139.7656],
+    "distributionLocation": "CADAN Otemachi",
+    "distributionAddress": "Chiyoda-ku, Otemachi 2-6-3",
+    "category": "culture"
+  },
+  {
+    "id": "13-100-B001",
+    "name": "Rainbow Sewer Museum",
+    "ward": "Koto",
+    "description": "Depicts the colorful rainbow motif associated with the Niji no Gesuidoukan (Rainbow Sewer Museum) in the Ariake waterfront area.",
+    "coordinates": [35.6342, 139.7870],
+    "distributionLocation": "Tokyo Niji no Gesuidoukan",
+    "distributionAddress": "Koto-ku, Ariake 2-3-5",
+    "category": "landmark"
+  },
+  {
+    "id": "13-100-C001",
+    "name": "Ueno Park Design",
+    "ward": "Taito",
+    "description": "Features a design inspired by the cultural and natural heritage of the Ueno Park area, a hub of museums and cherry blossoms.",
+    "coordinates": [35.7145, 139.7738],
+    "distributionLocation": "Tokyo Tourist Information Center Keisei Ueno",
+    "distributionAddress": "Taito-ku, Ueno Park 1-60",
+    "category": "nature"
+  },
+  {
+    "id": "13-100-D001",
+    "name": "Tora-san Shibamata",
+    "ward": "Katsushika",
+    "description": "Features the beloved film character Tora-san from 'Otoko wa Tsurai yo', set in the nostalgic Shibamata district of Katsushika.",
+    "coordinates": [35.7590, 139.8784],
+    "distributionLocation": "Shibamata Tourist Information Center",
+    "distributionAddress": "Katsushika-ku, Shibamata 7-1-5",
+    "category": "character"
+  },
+  {
+    "id": "13-100-E001",
+    "name": "Shinagawa Traditional Design",
+    "ward": "Shinagawa",
+    "description": "Showcases motifs representing Shinagawa's heritage as a historic post station along the old Tokaido highway.",
+    "coordinates": [35.6058, 139.7351],
+    "distributionLocation": "Shinagawa Tourism Association",
+    "distributionAddress": "Shinagawa-ku, Oi 1-14-1",
+    "category": "culture"
+  },
+  {
+    "id": "13-100-F001",
+    "name": "Chiyoda Cherry Blossom",
+    "ward": "Chiyoda",
+    "description": "Celebrates Chiyoda ward's famous cherry blossom viewing spots around the Imperial Palace moat and Kitanomaru Park.",
+    "coordinates": [35.6938, 139.7500],
+    "distributionLocation": "Chiyoda Tourist Information Center",
+    "distributionAddress": "Chiyoda-ku, Kudan-Minami 1-6-17",
+    "category": "nature"
+  },
+  {
+    "id": "13-100-G001",
+    "name": "Setagaya Cat Design",
+    "ward": "Setagaya",
+    "description": "Features a playful cat-themed design unique to Setagaya, one of Tokyo's largest residential wards known for its creative culture.",
+    "coordinates": [35.6436, 139.6698],
+    "distributionLocation": "Sangenjaya Tourist Information (SANCHA3)",
+    "distributionAddress": "Setagaya-ku, Taishido 4-1-1",
+    "category": "character"
+  },
+  {
+    "id": "13-100-H001",
+    "name": "Shibuya Hachiko Design",
+    "ward": "Shibuya",
+    "description": "Features design elements associated with Shibuya ward, distributed from the Sendagaya Social Education Center.",
+    "coordinates": [35.6814, 139.7116],
+    "distributionLocation": "Sendagaya Social Education Center",
+    "distributionAddress": "Shibuya-ku, Sendagaya 1-6-5",
+    "category": "landmark"
+  },
+  {
+    "id": "13-100-I001",
+    "name": "Suginami Animation Design",
+    "ward": "Suginami",
+    "description": "Reflects Suginami's identity as an animation hub, home to many famous anime studios and the Suginami Animation Museum.",
+    "coordinates": [35.7043, 139.6358],
+    "distributionLocation": "Suginami Industry and Commerce Center",
+    "distributionAddress": "Suginami-ku, Asagaya-Minami 3-2-19",
+    "category": "art"
+  },
+  {
+    "id": "13-100-J001",
+    "name": "Toshima Manga Art",
+    "ward": "Toshima",
+    "description": "Celebrates Toshima ward's status as an international art and culture city, featuring manga and anime inspired artwork near Ikebukuro.",
+    "coordinates": [35.7291, 139.7136],
+    "distributionLocation": "Toshima Tourist Information Ikebukuro",
+    "distributionAddress": "Toshima-ku, Higashi-Ikebukuro 1-20-10",
+    "category": "art"
+  },
+  {
+    "id": "13-100-K001",
+    "name": "Kita Ward Shibusawa Design",
+    "ward": "Kita",
+    "description": "Features design elements related to Kita ward's connection to Eiichi Shibusawa, the father of Japanese capitalism, near Asukayama Park.",
+    "coordinates": [35.7524, 139.7382],
+    "distributionLocation": "Akabane Culture Center",
+    "distributionAddress": "Kita-ku, Akabane-Nishi 1-6-1-301",
+    "category": "culture"
+  },
+  {
+    "id": "13-100-L001",
+    "name": "Adachi Fireworks Festival",
+    "ward": "Adachi",
+    "description": "Depicts the spectacular Adachi Fireworks Festival, one of Tokyo's earliest and most popular summer fireworks displays along the Arakawa River.",
+    "coordinates": [35.7497, 139.8036],
+    "distributionLocation": "Adachi Industry Center",
+    "distributionAddress": "Adachi-ku, Senju 1-5-7",
+    "category": "culture"
+  },
+  {
+    "id": "13-100-M001",
+    "name": "Shinagawa Musashi-Koyama Design",
+    "ward": "Shinagawa",
+    "description": "Features design motifs from the vibrant Musashi-Koyama shopping street area, one of Tokyo's longest covered shopping arcades.",
+    "coordinates": [35.6178, 139.7053],
+    "distributionLocation": "info & cafe SQUARE",
+    "distributionAddress": "Shinagawa-ku, Ebara 4-5-28",
+    "category": "landmark"
+  },
+  {
+    "id": "13-100-N001",
+    "name": "Katsushika Captain Tsubasa",
+    "ward": "Katsushika",
+    "description": "Features Captain Tsubasa, the iconic soccer manga character, celebrating Katsushika's connection to manga artist Yoichi Takahashi.",
+    "coordinates": [35.7416, 139.8543],
+    "distributionLocation": "Maruyoshi Toy Store",
+    "distributionAddress": "Katsushika-ku, Tateishi 1-21-2",
+    "category": "character"
+  },
+  {
+    "id": "13-100-O001",
+    "name": "Shinjuku Godzilla Design",
+    "ward": "Shinjuku",
+    "description": "Celebrates Shinjuku's pop culture identity, distributed near the famous Kabukicho entertainment district and its Godzilla landmark.",
+    "coordinates": [35.6938, 139.7034],
+    "distributionLocation": "Shinjuku Tourist Information Center",
+    "distributionAddress": "Shinjuku-ku, Shinjuku 3-37-2",
+    "category": "character"
+  },
+  {
+    "id": "13-100-Q001",
+    "name": "Taito Asakusa Design",
+    "ward": "Taito",
+    "description": "Features design elements from Taito ward's cultural heart, near the historic Asakusa and Senso-ji temple area.",
+    "coordinates": [35.7192, 139.7888],
+    "distributionLocation": "Taito Lifelong Learning Center",
+    "distributionAddress": "Taito-ku, Nishi-Asakusa 3-25-16",
+    "category": "landmark"
+  },
+  {
+    "id": "13-100-A101",
+    "name": "Nerima Anime Heritage",
+    "ward": "Nerima",
+    "description": "Celebrates Nerima as the birthplace of Japanese anime, with design motifs honoring the ward's rich animation history.",
+    "coordinates": [35.7373, 139.6524],
+    "distributionLocation": "Nerima Tourist Information Center",
+    "distributionAddress": "Nerima-ku, Nerima 1-17-1 Coconeri 3F",
+    "category": "art"
+  },
+  {
+    "id": "13-100-G101",
+    "name": "Minato Ward Tower Design",
+    "ward": "Minato",
+    "description": "Features iconic landmarks of Minato ward including Tokyo Tower and the modern waterfront development of the area.",
+    "coordinates": [35.6461, 139.7471],
+    "distributionLocation": "Minato Tourist Information Center",
+    "distributionAddress": "Minato-ku, Shiba 5-36-4 Fuda-no-Tsuji Square 1F",
+    "category": "landmark"
+  },
+  {
+    "id": "13-100-L101",
+    "name": "Sumida Hokusai Wave",
+    "ward": "Sumida",
+    "description": "Features Katsushika Hokusai's 'The Great Wave off Kanagawa', honoring the legendary ukiyo-e artist who was born in Sumida ward.",
+    "coordinates": [35.7118, 139.8041],
+    "distributionLocation": "Connect Sumida (Machidokoro)",
+    "distributionAddress": "Sumida-ku, Mukojima 1-23-9",
+    "category": "art"
+  },
+  {
+    "id": "13-100-I101",
+    "name": "Itabashi Historical Design",
+    "ward": "Itabashi",
+    "description": "Reflects Itabashi's history as the first post station on the Nakasendo highway, connecting Edo to Kyoto.",
+    "coordinates": [35.7536, 139.7074],
+    "distributionLocation": "Itabashi Tourism Center",
+    "distributionAddress": "Itabashi-ku, Itabashi 3-14-15",
+    "category": "culture"
+  }
+]

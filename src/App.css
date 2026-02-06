@@ -17,6 +17,13 @@ body {
   box-sizing: border-box;
 }
 
+.app-layout {
+  display: flex;
+  gap: 20px;
+  width: 95vw;
+  max-width: 1400px;
+}
+
 .app-title {
   color: #333;
   font-weight: 700;
@@ -26,9 +33,9 @@ body {
 }
 
 .map-container {
-  height: 70vh;
-  width: 90vw;
-  max-width: 1200px;
+  height: 75vh;
+  flex: 1;
+  min-width: 0;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -62,4 +69,390 @@ body {
 
 .leaflet-popup-tip {
   background: white;
+}
+
+/* --- Manhole Card Popup Styling --- */
+.manhole-card-popup {
+  min-width: 200px;
+}
+
+.manhole-category-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.manhole-card-popup h2 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 6px 0 4px;
+  color: #2c3e50;
+}
+
+.manhole-ward {
+  font-size: 0.85em;
+  color: #888;
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+
+.manhole-description {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.manhole-distribution {
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.85em;
+}
+
+.manhole-distribution strong {
+  color: #444;
+}
+
+.manhole-distribution p {
+  margin: 4px 0 0;
+  color: #555;
+}
+
+.manhole-address {
+  font-size: 0.9em;
+  color: #888 !important;
+}
+
+/* --- Route Toggle Button in Popup --- */
+.route-toggle-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 0;
+  border: 2px solid #6A0DAD;
+  border-radius: 6px;
+  background: #6A0DAD;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.route-toggle-btn:hover {
+  background: #5a0b96;
+}
+
+.route-toggle-btn.in-route {
+  background: white;
+  color: #c0392b;
+  border-color: #c0392b;
+}
+
+.route-toggle-btn.in-route:hover {
+  background: #fdf0ef;
+}
+
+/* --- Active Marker Glow --- */
+.manhole-marker-active {
+  filter: drop-shadow(0 0 6px #6A0DAD) drop-shadow(0 0 12px rgba(106, 13, 173, 0.4));
+}
+
+/* --- Stop List Sidebar --- */
+.stop-list {
+  width: 300px;
+  min-width: 300px;
+  height: 75vh;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.stop-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.stop-list-header h2 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.clear-btn {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.clear-btn:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.stop-list-empty {
+  padding: 20px 18px;
+  color: #999;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.stop-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.stop-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px 10px 18px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.1s;
+}
+
+.stop-item:hover {
+  background: #fafafa;
+}
+
+.stop-item-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.stop-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  background: #6A0DAD;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 700;
+}
+
+.stop-name {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stop-ward {
+  display: block;
+  font-size: 0.75em;
+  color: #999;
+}
+
+.stop-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 6px;
+}
+
+.stop-move-btn,
+.stop-remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  font-size: 0.7em;
+  color: #bbb;
+  transition: color 0.15s;
+}
+
+.stop-move-btn:hover {
+  color: #6A0DAD;
+}
+
+.stop-move-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.stop-remove-btn {
+  font-size: 0.85em;
+  margin-left: 2px;
+}
+
+.stop-remove-btn:hover {
+  color: #c0392b;
+}
+
+.stop-list-hint {
+  padding: 10px 18px;
+  margin: 0;
+  font-size: 0.8em;
+  color: #999;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+/* --- Segment Controls --- */
+.segment-control {
+  display: flex;
+  align-items: center;
+  padding: 6px 18px;
+  background: #f8f6fc;
+  border-bottom: 1px solid #f0f0f0;
+  min-height: 32px;
+}
+
+.segment-control.segment-drawing {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #f0ebfa;
+}
+
+.segment-label {
+  font-size: 0.78em;
+  color: #888;
+  flex: 1;
+}
+
+.segment-drawing .segment-label {
+  color: #6A0DAD;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.segment-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.segment-drawn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.segment-drawn .segment-actions {
+  margin-left: auto;
+}
+
+.segment-check {
+  color: #10B981;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
+.segment-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.segment-btn:hover {
+  border-color: #999;
+  color: #333;
+}
+
+.segment-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.segment-btn.done {
+  background: #6A0DAD;
+  border-color: #6A0DAD;
+  color: white;
+}
+
+.segment-btn.done:hover {
+  background: #5a0b96;
+}
+
+.segment-btn.done:disabled {
+  background: #b89ed4;
+  border-color: #b89ed4;
+}
+
+.segment-btn.cancel:hover,
+.segment-btn.clear-seg:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.segment-draw-btn {
+  width: 100%;
+  padding: 5px 0;
+  border: 1px dashed #bbb;
+  border-radius: 4px;
+  background: transparent;
+  color: #999;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.78em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.segment-draw-btn:hover {
+  border-color: #6A0DAD;
+  color: #6A0DAD;
+  background: #f8f6fc;
+}
+
+.segment-draw-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* --- Drawing Mode Banner --- */
+.drawing-banner {
+  padding: 10px 18px;
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #6A0DAD;
+  text-align: center;
+  border-top: 1px solid #eee;
+  background: #f8f6fc;
+  margin-top: auto;
 }

@@ -1,12 +1,14 @@
-import React from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+import React, { useCallback } from "react";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
 
-import RoutingMachine from "./RoutingMachine";
+import ManholeMarkers from "./ManholeMarkers";
+import StopList from "./StopList";
+import RouteLines from "./RouteLines";
+import useRoute from "./useRoute";
 
-// Fix for default icon in react-leaflet
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -14,41 +16,79 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const routePoints = [
-  { name: "Tokyo Station", coordinates: [35.6812, 139.7671] },
-  { name: "Shinjuku Gyoen", coordinates: [35.6852, 139.7107] },
-
-  // This is an explicitly declared "via" point to guide the route. It has no name.
-  { coordinates: [39.7, 139.75] },
-
-  { name: "Ueno Park", coordinates: [35.7145, 139.7738] },
-  { name: "Shibuya Crossing", coordinates: [35.6591, 139.7037] },
-  { name: "Imperial Palace East Garden", coordinates: [35.6881, 139.7533] },
-];
+function FlyTo({ coordinates }) {
+  const map = useMap();
+  React.useEffect(() => {
+    if (coordinates) {
+      map.flyTo(coordinates, 15, { duration: 0.8 });
+    }
+  }, [map, coordinates]);
+  return null;
+}
 
 function App() {
-  const defaultCenter = [35.6895, 139.6917]; // Centered around central Tokyo
+  const defaultCenter = [35.6895, 139.6917];
   const defaultZoom = 12;
+  const {
+    stops,
+    segments,
+    drawingSegment,
+    toggleStop,
+    removeStop,
+    moveStop,
+    clearStops,
+    isInRoute,
+    startDrawing,
+    addDrawingPoint,
+    undoDrawingPoint,
+    finishDrawing,
+    cancelDrawing,
+    clearSegment,
+  } = useRoute();
+  const [flyTarget, setFlyTarget] = React.useState(null);
 
-  // Prepare waypoints for the routing machine from the new detailed route points
-  const waypoints = routePoints.map((p) =>
-    L.Routing.waypoint(L.latLng(p.coordinates[0], p.coordinates[1]), p.name),
-  );
+  const handleLocate = useCallback((stop) => {
+    setFlyTarget(stop.coordinates);
+    setTimeout(() => setFlyTarget(null), 1000);
+  }, []);
 
   return (
     <div className="App">
-      <h1 className="app-title">Interactive Route Planner</h1>
-      <MapContainer
-        center={defaultCenter}
-        zoom={defaultZoom}
-        className="map-container"
-      >
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      <h1 className="app-title">Manhole Card Route Planner</h1>
+      <div className="app-layout">
+        <StopList
+          stops={stops}
+          segments={segments}
+          drawingSegment={drawingSegment}
+          onRemove={removeStop}
+          onMove={moveStop}
+          onClear={clearStops}
+          onLocate={handleLocate}
+          onStartDrawing={startDrawing}
+          onFinishDrawing={finishDrawing}
+          onCancelDrawing={cancelDrawing}
+          onUndoPoint={undoDrawingPoint}
+          onClearSegment={clearSegment}
         />
-        <RoutingMachine waypoints={waypoints} />
-      </MapContainer>
+        <MapContainer
+          center={defaultCenter}
+          zoom={defaultZoom}
+          className="map-container"
+        >
+          <TileLayer
+            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          />
+          <RouteLines
+            stops={stops}
+            segments={segments}
+            drawingSegment={drawingSegment}
+            onMapClick={addDrawingPoint}
+          />
+          <ManholeMarkers onToggleStop={toggleStop} isInRoute={isInRoute} />
+          {flyTarget && <FlyTo coordinates={flyTarget} />}
+        </MapContainer>
+      </div>
     </div>
   );
 }

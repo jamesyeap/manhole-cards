@@ -14,29 +14,24 @@ const RoutingMachine = ({ waypoints }) => {
       waypoints: waypoints,
       // Core settings to make it non-interactive
       routeWhileDragging: false, // Disables dragging route
-      addWaypoints: false,       // Disables adding new waypoints
+      addWaypoints: false, // Disables adding new waypoints
       draggableWaypoints: false, // Disables dragging existing waypoints
-      show: false,               // Hides the instructions panel
-      
+      show: false, // Hides the instructions panel
+
       router: L.Routing.osrmv1({
         serviceUrl: `https://router.project-osrm.org/route/v1`,
-        profile: 'foot'
+        profile: "foot",
       }),
       lineOptions: {
-        styles: [{ color: '#6A0DAD', opacity: 0.8, weight: 5, dashArray: '10, 10' }]
+        styles: [
+          { color: "#6A0DAD", opacity: 0.8, weight: 5, dashArray: "10, 10" },
+        ],
       },
       fitSelectedRoutes: true,
       showAlternatives: false,
-      createMarker: function(i, waypoint, n) {
-        if (waypoint.name) {
-          // Main locations are visible but not draggable
-          return L.marker(waypoint.latLng, {
-            draggable: false, 
-          }).bindPopup(`<b>${waypoint.name}</b>`);
-        }
-        // "Via" points are invisible
+      createMarker: function () {
         return false;
-      }
+      },
     }).addTo(map);
 
     return () => {
