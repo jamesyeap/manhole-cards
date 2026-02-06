@@ -14,11 +14,15 @@ const StopList = ({
   onCancelDrawing,
   onUndoPoint,
   onClearSegment,
+  segmentDistances,
+  totalDistance,
 }) => {
   return (
     <div className="stop-list">
       <div className="stop-list-header">
-        <h2>My Route</h2>
+        <h2>My Route{totalDistance > 0 && (
+          <span className="route-total-distance">{totalDistance.toFixed(2)} km total</span>
+        )}</h2>
         {stops.length > 0 && (
           <button className="clear-btn" onClick={onClear} disabled={!!drawingSegment}>
             Clear all
@@ -85,6 +89,7 @@ const StopList = ({
                     onCancelDrawing={onCancelDrawing}
                     onUndoPoint={onUndoPoint}
                     onClearSegment={onClearSegment}
+                    segmentDistances={segmentDistances}
                   />
                 )}
               </React.Fragment>
@@ -113,6 +118,7 @@ const SegmentControl = ({
   onCancelDrawing,
   onUndoPoint,
   onClearSegment,
+  segmentDistances,
 }) => {
   const key = segmentKey(fromStop, toStop);
   const hasSegment = !!segments[key];
@@ -154,6 +160,9 @@ const SegmentControl = ({
         <div className="segment-drawn">
           <span className="segment-check">&#10003;</span>
           <span className="segment-label">Route drawn</span>
+          {segmentDistances[key] !== undefined && (
+            <span className="segment-distance">{segmentDistances[key].toFixed(2)} km</span>
+          )}
           <div className="segment-actions">
             <button
               className="segment-btn redraw"

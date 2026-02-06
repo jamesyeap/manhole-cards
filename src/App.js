@@ -44,6 +44,8 @@ function App() {
     finishDrawing,
     cancelDrawing,
     clearSegment,
+    segmentDistances,
+    totalDistance,
   } = useRoute();
   const [flyTarget, setFlyTarget] = React.useState(null);
 
@@ -69,7 +71,9 @@ function App() {
           onCancelDrawing={cancelDrawing}
           onUndoPoint={undoDrawingPoint}
           onClearSegment={clearSegment}
-        />
+          segmentDistances={segmentDistances}
+          totalDistance={totalDistance}
+          />
         <MapContainer
           center={defaultCenter}
           zoom={defaultZoom}

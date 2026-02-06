@@ -1,5 +1,6 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import manholeCards from "./data/manholeCards.json";
+import { computePolylineDistance } from "./distance";
 
 const STOPS_KEY = "manhole-route-stops";
 const SEGMENTS_KEY = "manhole-route-segments";
@@ -143,6 +144,25 @@ export default function useRoute() {
     [stops],
   );
 
+  const segmentDistances = useMemo(() => {
+    const result = {};
+    for (const key of Object.keys(segments)) {
+      result[key] = computePolylineDistance(segments[key]);
+    }
+    return result;
+  }, [segments]);
+
+  const totalDistance = useMemo(() => {
+    let sum = 0;
+    for (let i = 0; i < stops.length - 1; i++) {
+      const key = segmentKey(stops[i], stops[i + 1]);
+      if (segmentDistances[key] !== undefined) {
+        sum += segmentDistances[key];
+      }
+    }
+    return sum;
+  }, [stops, segmentDistances]);
+
   return {
     stops,
     segments,
@@ -158,5 +178,7 @@ export default function useRoute() {
     finishDrawing,
     cancelDrawing,
     clearSegment,
+    segmentDistances,
+    totalDistance,
   };
 }

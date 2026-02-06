@@ -456,3 +456,18 @@ body {
   background: #f8f6fc;
   margin-top: auto;
 }
+
+/* --- Route Distance --- */
+.route-total-distance {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #6A0DAD;
+  margin-left: 8px;
+}
+
+.segment-distance {
+  font-size: 0.75em;
+  color: #6A0DAD;
+  font-weight: 600;
+  margin-left: 4px;
+}
