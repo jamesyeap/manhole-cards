@@ -471,3 +471,128 @@ body {
   font-weight: 600;
   margin-left: 4px;
 }
+
+/* --- Trip Stats Dashboard --- */
+.trip-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 32px;
+  margin-bottom: 20px;
+  width: 95vw;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+.trip-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trip-stat-number {
+  font-size: 2em;
+  font-weight: 700;
+  color: #6A0DAD;
+}
+
+.trip-stat-label {
+  font-size: 0.8em;
+  color: #888;
+  font-weight: 500;
+}
+
+.trip-stats-categories {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.trip-category-badge {
+  background: #6A0DAD;
+  font-size: 0.75em;
+  margin-bottom: 0;
+}
+
+/* --- Day Picker --- */
+.day-picker {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.day-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 6px 16px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.day-btn:hover {
+  border-color: #6A0DAD;
+  color: #6A0DAD;
+}
+
+.day-btn-active {
+  background: #6A0DAD;
+  border-color: #6A0DAD;
+  color: white;
+}
+
+/* --- Ward Heatmap Toggle --- */
+.heatmap-toggle-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 6px 16px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-bottom: 16px;
+}
+
+.heatmap-toggle-btn:hover {
+  border-color: #6A0DAD;
+  color: #6A0DAD;
+}
+
+.heatmap-toggle-btn.active {
+  background: #6A0DAD;
+  border-color: #6A0DAD;
+  color: white;
+}
+
+/* --- Photo Gallery --- */
+.photo-gallery-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.photo-gallery-content { background: white; border-radius: 12px; max-width: 600px; width: 100%; max-height: 80vh; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+.photo-gallery-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #eee; }
+.photo-gallery-header h3 { margin: 0; font-size: 1.1em; color: #333; }
+.photo-gallery-close { background: none; border: none; font-size: 1.4em; color: #999; cursor: pointer; padding: 0 4px; line-height: 1; }
+.photo-gallery-close:hover { color: #333; }
+.photo-gallery-body { padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 200px; }
+.photo-gallery-placeholder { text-align: center; color: #999; font-size: 0.95em; }
+.photo-gallery-placeholder .placeholder-icon { font-size: 2.5em; display: block; margin-bottom: 12px; }
+.photo-gallery-image { max-width: 100%; max-height: 50vh; object-fit: contain; border-radius: 6px; }
+.photo-gallery-caption { margin-top: 12px; font-size: 0.85em; color: #666; text-align: center; }
+.photo-gallery-nav { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 12px 20px 16px; border-top: 1px solid #eee; }
+.photo-gallery-nav button { background: none; border: 1px solid #ddd; border-radius: 50%; width: 32px; height: 32px; font-size: 1em; cursor: pointer; color: #666; display: flex; align-items: center; justify-content: center; transition: all 0.15s ease; }
+.photo-gallery-nav button:hover { border-color: #6A0DAD; color: #6A0DAD; }
+.photo-gallery-nav button:disabled { opacity: 0.3; cursor: default; }
+.photo-gallery-btn { display: block; width: 100%; margin-top: 6px; padding: 6px 0; border: 1px solid #ddd; border-radius: 6px; background: white; color: #666; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.8em; cursor: pointer; transition: all 0.15s ease; }
+.photo-gallery-btn:hover { border-color: #6A0DAD; color: #6A0DAD; }

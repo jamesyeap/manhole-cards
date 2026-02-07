@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import manholeCards from "./data/manholeCards.json";
+import PhotoGallery from "./PhotoGallery";
 
 const manholeIcon = new L.Icon({
   iconUrl: `${process.env.PUBLIC_URL}/manhole-icon.svg`,
@@ -26,16 +27,23 @@ const categoryColors = {
   art: "#EC4899",
 };
 
-const ManholeMarkers = ({ onToggleStop, isInRoute }) => {
+const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay }) => {
+  const [photoCard, setPhotoCard] = useState(null);
+
   return (
     <>
       {manholeCards.map((card) => {
         const inRoute = isInRoute(card.id);
+        const dimmed =
+          selectedDay !== null &&
+          selectedDay !== undefined &&
+          card.collectionDay !== selectedDay;
         return (
           <Marker
             key={card.id}
             position={card.coordinates}
             icon={inRoute ? manholeIconActive : manholeIcon}
+            opacity={dimmed ? 0.3 : 1}
           >
             <Popup maxWidth={280} className="manhole-popup">
               <div className="manhole-card-popup">
@@ -61,11 +69,23 @@ const ManholeMarkers = ({ onToggleStop, isInRoute }) => {
                 >
                   {inRoute ? "Remove from route" : "Add to route"}
                 </button>
+                <button
+                  className="photo-gallery-btn"
+                  onClick={() => setPhotoCard(card)}
+                >
+                  View Photos
+                </button>
               </div>
             </Popup>
           </Marker>
         );
       })}
+      <PhotoGallery
+        photos={photoCard ? photoCard.photos : []}
+        isOpen={photoCard !== null}
+        onClose={() => setPhotoCard(null)}
+        cardName={photoCard ? photoCard.name : ""}
+      />
     </>
   );
 };

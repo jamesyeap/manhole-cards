@@ -7,7 +7,9 @@
     "coordinates": [35.6862, 139.7656],
     "distributionLocation": "CADAN Otemachi",
     "distributionAddress": "Chiyoda-ku, Otemachi 2-6-3",
-    "category": "culture"
+    "category": "culture",
+    "collectionDay": 1,
+    "photos": []
   },
   {
     "id": "13-100-B001",
@@ -17,7 +19,9 @@
     "coordinates": [35.6342, 139.7870],
     "distributionLocation": "Tokyo Niji no Gesuidoukan",
     "distributionAddress": "Koto-ku, Ariake 2-3-5",
-    "category": "landmark"
+    "category": "landmark",
+    "collectionDay": 1,
+    "photos": []
   },
   {
     "id": "13-100-C001",
@@ -27,7 +31,9 @@
     "coordinates": [35.7145, 139.7738],
     "distributionLocation": "Tokyo Tourist Information Center Keisei Ueno",
     "distributionAddress": "Taito-ku, Ueno Park 1-60",
-    "category": "nature"
+    "category": "nature",
+    "collectionDay": 1,
+    "photos": []
   },
   {
     "id": "13-100-D001",
@@ -37,7 +43,9 @@
     "coordinates": [35.7590, 139.8784],
     "distributionLocation": "Shibamata Tourist Information Center",
     "distributionAddress": "Katsushika-ku, Shibamata 7-1-5",
-    "category": "character"
+    "category": "character",
+    "collectionDay": 2,
+    "photos": []
   },
   {
     "id": "13-100-E001",
@@ -47,7 +55,9 @@
     "coordinates": [35.6058, 139.7351],
     "distributionLocation": "Shinagawa Tourism Association",
     "distributionAddress": "Shinagawa-ku, Oi 1-14-1",
-    "category": "culture"
+    "category": "culture",
+    "collectionDay": 4,
+    "photos": []
   },
   {
     "id": "13-100-F001",
@@ -57,7 +67,9 @@
     "coordinates": [35.6938, 139.7500],
     "distributionLocation": "Chiyoda Tourist Information Center",
     "distributionAddress": "Chiyoda-ku, Kudan-Minami 1-6-17",
-    "category": "nature"
+    "category": "nature",
+    "collectionDay": 1,
+    "photos": []
   },
   {
     "id": "13-100-G001",
@@ -67,7 +79,9 @@
     "coordinates": [35.6436, 139.6698],
     "distributionLocation": "Sangenjaya Tourist Information (SANCHA3)",
     "distributionAddress": "Setagaya-ku, Taishido 4-1-1",
-    "category": "character"
+    "category": "character",
+    "collectionDay": 4,
+    "photos": []
   },
   {
     "id": "13-100-H001",
@@ -77,7 +91,9 @@
     "coordinates": [35.6814, 139.7116],
     "distributionLocation": "Sendagaya Social Education Center",
     "distributionAddress": "Shibuya-ku, Sendagaya 1-6-5",
-    "category": "landmark"
+    "category": "landmark",
+    "collectionDay": 3,
+    "photos": []
   },
   {
     "id": "13-100-I001",
@@ -87,7 +103,9 @@
     "coordinates": [35.7043, 139.6358],
     "distributionLocation": "Suginami Industry and Commerce Center",
     "distributionAddress": "Suginami-ku, Asagaya-Minami 3-2-19",
-    "category": "art"
+    "category": "art",
+    "collectionDay": 3,
+    "photos": []
   },
   {
     "id": "13-100-J001",
@@ -97,7 +115,9 @@
     "coordinates": [35.7291, 139.7136],
     "distributionLocation": "Toshima Tourist Information Ikebukuro",
     "distributionAddress": "Toshima-ku, Higashi-Ikebukuro 1-20-10",
-    "category": "art"
+    "category": "art",
+    "collectionDay": 2,
+    "photos": []
   },
   {
     "id": "13-100-K001",
@@ -107,7 +127,9 @@
     "coordinates": [35.7524, 139.7382],
     "distributionLocation": "Akabane Culture Center",
     "distributionAddress": "Kita-ku, Akabane-Nishi 1-6-1-301",
-    "category": "culture"
+    "category": "culture",
+    "collectionDay": 2,
+    "photos": []
   },
   {
     "id": "13-100-L001",
@@ -117,7 +139,9 @@
     "coordinates": [35.7497, 139.8036],
     "distributionLocation": "Adachi Industry Center",
     "distributionAddress": "Adachi-ku, Senju 1-5-7",
-    "category": "culture"
+    "category": "culture",
+    "collectionDay": 2,
+    "photos": []
   },
   {
     "id": "13-100-M001",
@@ -127,7 +151,9 @@
     "coordinates": [35.6178, 139.7053],
     "distributionLocation": "info & cafe SQUARE",
     "distributionAddress": "Shinagawa-ku, Ebara 4-5-28",
-    "category": "landmark"
+    "category": "landmark",
+    "collectionDay": 4,
+    "photos": []
   },
   {
     "id": "13-100-N001",
@@ -137,7 +163,9 @@
     "coordinates": [35.7416, 139.8543],
     "distributionLocation": "Maruyoshi Toy Store",
     "distributionAddress": "Katsushika-ku, Tateishi 1-21-2",
-    "category": "character"
+    "category": "character",
+    "collectionDay": 2,
+    "photos": []
   },
   {
     "id": "13-100-O001",
@@ -147,7 +175,9 @@
     "coordinates": [35.6938, 139.7034],
     "distributionLocation": "Shinjuku Tourist Information Center",
     "distributionAddress": "Shinjuku-ku, Shinjuku 3-37-2",
-    "category": "character"
+    "category": "character",
+    "collectionDay": 3,
+    "photos": []
   },
   {
     "id": "13-100-Q001",
@@ -157,7 +187,9 @@
     "coordinates": [35.7192, 139.7888],
     "distributionLocation": "Taito Lifelong Learning Center",
     "distributionAddress": "Taito-ku, Nishi-Asakusa 3-25-16",
-    "category": "landmark"
+    "category": "landmark",
+    "collectionDay": 1,
+    "photos": []
   },
   {
     "id": "13-100-A101",
@@ -167,7 +199,9 @@
     "coordinates": [35.7373, 139.6524],
     "distributionLocation": "Nerima Tourist Information Center",
     "distributionAddress": "Nerima-ku, Nerima 1-17-1 Coconeri 3F",
-    "category": "art"
+    "category": "art",
+    "collectionDay": 3,
+    "photos": []
   },
   {
     "id": "13-100-G101",
@@ -177,7 +211,9 @@
     "coordinates": [35.6461, 139.7471],
     "distributionLocation": "Minato Tourist Information Center",
     "distributionAddress": "Minato-ku, Shiba 5-36-4 Fuda-no-Tsuji Square 1F",
-    "category": "landmark"
+    "category": "landmark",
+    "collectionDay": 4,
+    "photos": []
   },
   {
     "id": "13-100-L101",
@@ -187,7 +223,9 @@
     "coordinates": [35.7118, 139.8041],
     "distributionLocation": "Connect Sumida (Machidokoro)",
     "distributionAddress": "Sumida-ku, Mukojima 1-23-9",
-    "category": "art"
+    "category": "art",
+    "collectionDay": 1,
+    "photos": []
   },
   {
     "id": "13-100-I101",
@@ -197,6 +235,8 @@
     "coordinates": [35.7536, 139.7074],
     "distributionLocation": "Itabashi Tourism Center",
     "distributionAddress": "Itabashi-ku, Itabashi 3-14-15",
-    "category": "culture"
+    "category": "culture",
+    "collectionDay": 5,
+    "photos": []
   }
 ]

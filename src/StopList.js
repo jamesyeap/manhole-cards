@@ -16,7 +16,13 @@ const StopList = ({
   onClearSegment,
   segmentDistances,
   totalDistance,
+  selectedDay,
 }) => {
+  const filteredStops =
+    selectedDay != null
+      ? stops.filter((s) => s.collectionDay === selectedDay)
+      : stops;
+
   return (
     <div className="stop-list">
       <div className="stop-list-header">
@@ -30,15 +36,17 @@ const StopList = ({
         )}
       </div>
 
-      {stops.length === 0 ? (
+      {filteredStops.length === 0 ? (
         <p className="stop-list-empty">
-          Click a manhole marker on the map, then press "Add to route" to start
-          building your walking route.
+          {selectedDay != null
+            ? `No stops for Day ${selectedDay}.`
+            : "Click a manhole marker on the map, then press \"Add to route\" to start building your walking route."}
         </p>
       ) : (
         <ol className="stop-items">
-          {stops.map((stop, i) => {
+          {filteredStops.map((stop, i) => {
             const isDrawingActive = !!drawingSegment;
+            const originalIndex = stops.indexOf(stop);
             return (
               <React.Fragment key={stop.id}>
                 <li className="stop-item">
@@ -52,16 +60,16 @@ const StopList = ({
                   <div className="stop-item-actions">
                     <button
                       className="stop-move-btn"
-                      disabled={i === 0 || isDrawingActive}
-                      onClick={() => onMove(i, i - 1)}
+                      disabled={originalIndex === 0 || isDrawingActive}
+                      onClick={() => onMove(originalIndex, originalIndex - 1)}
                       title="Move up"
                     >
                       ▲
                     </button>
                     <button
                       className="stop-move-btn"
-                      disabled={i === stops.length - 1 || isDrawingActive}
-                      onClick={() => onMove(i, i + 1)}
+                      disabled={originalIndex === stops.length - 1 || isDrawingActive}
+                      onClick={() => onMove(originalIndex, originalIndex + 1)}
                       title="Move down"
                     >
                       ▼
@@ -77,11 +85,11 @@ const StopList = ({
                   </div>
                 </li>
 
-                {i < stops.length - 1 && (
+                {i < filteredStops.length - 1 && (
                   <SegmentControl
-                    segIndex={i}
+                    segIndex={originalIndex}
                     fromStop={stop}
-                    toStop={stops[i + 1]}
+                    toStop={filteredStops[i + 1]}
                     segments={segments}
                     drawingSegment={drawingSegment}
                     onStartDrawing={onStartDrawing}

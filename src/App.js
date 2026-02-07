@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -7,6 +7,9 @@ import "./App.css";
 import ManholeMarkers from "./ManholeMarkers";
 import StopList from "./StopList";
 import RouteLines from "./RouteLines";
+import TripStats from "./TripStats";
+import DayPicker from "./DayPicker";
+import WardHeatmap from "./WardHeatmap";
 import useRoute from "./useRoute";
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -48,6 +51,8 @@ function App() {
     totalDistance,
   } = useRoute();
   const [flyTarget, setFlyTarget] = React.useState(null);
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [showHeatmap, setShowHeatmap] = useState(false);
 
   const handleLocate = useCallback((stop) => {
     setFlyTarget(stop.coordinates);
@@ -57,6 +62,14 @@ function App() {
   return (
     <div className="App">
       <h1 className="app-title">Manhole Card Route Planner</h1>
+      <TripStats totalDistance={totalDistance} />
+      <DayPicker selectedDay={selectedDay} onSelectDay={setSelectedDay} />
+      <button
+        className={`heatmap-toggle-btn${showHeatmap ? " active" : ""}`}
+        onClick={() => setShowHeatmap((v) => !v)}
+      >
+        {showHeatmap ? "Hide Ward Heatmap" : "Show Ward Heatmap"}
+      </button>
       <div className="app-layout">
         <StopList
           stops={stops}
@@ -73,6 +86,7 @@ function App() {
           onClearSegment={clearSegment}
           segmentDistances={segmentDistances}
           totalDistance={totalDistance}
+          selectedDay={selectedDay}
           />
         <MapContainer
           center={defaultCenter}
@@ -89,7 +103,8 @@ function App() {
             drawingSegment={drawingSegment}
             onMapClick={addDrawingPoint}
           />
-          <ManholeMarkers onToggleStop={toggleStop} isInRoute={isInRoute} />
+          <ManholeMarkers onToggleStop={toggleStop} isInRoute={isInRoute} selectedDay={selectedDay} />
+          <WardHeatmap visible={showHeatmap} />
           {flyTarget && <FlyTo coordinates={flyTarget} />}
         </MapContainer>
       </div>
