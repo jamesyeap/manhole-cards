@@ -1,24 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import manholeCards from "./data/manholeCards.json";
 import anythingsearchCards from "./data/anythingsearchCards.json";
 import PhotoGallery from "./PhotoGallery";
 
-const manholeIcon = new L.Icon({
+const defaultIcon = new L.Icon({
   iconUrl: `${process.env.PUBLIC_URL}/manhole-icon.svg`,
   iconSize: [28, 28],
   iconAnchor: [14, 14],
   popupAnchor: [0, -14],
 });
 
-const manholeIconActive = new L.Icon({
+const defaultIconActive = new L.Icon({
   iconUrl: `${process.env.PUBLIC_URL}/manhole-icon.svg`,
   iconSize: [34, 34],
   iconAnchor: [17, 17],
   popupAnchor: [0, -17],
   className: "manhole-marker-active",
 });
+
+function createCardIcon(imageUrl, active) {
+  const size = active ? 44 : 36;
+  const border = active ? "3px solid #6A0DAD" : "2px solid #fff";
+  const shadow = active
+    ? "0 0 6px #6A0DAD, 0 0 12px rgba(106,13,173,0.4), 0 2px 6px rgba(0,0,0,0.3)"
+    : "0 2px 6px rgba(0,0,0,0.3)";
+  return L.divIcon({
+    className: "manhole-thumb-icon",
+    html: `<div style="
+      width:${size}px;
+      height:${size}px;
+      border-radius:50%;
+      border:${border};
+      box-shadow:${shadow};
+      background:url('${imageUrl}') center/cover no-repeat #eee;
+    "></div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+    popupAnchor: [0, -(size / 2)],
+  });
+}
 
 const categoryColors = {
   culture: "#8B5CF6",
@@ -37,6 +59,20 @@ const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay, drawingSegment, 
 
   const collectedCards = manholeCards.filter((c) => c.collected !== false);
 
+  const iconCache = useMemo(() => {
+    const cache = {};
+    collectedCards.forEach((card) => {
+      const asCard = anythingsearchCards[card.id];
+      if (asCard && asCard.imageUrl) {
+        cache[card.id] = {
+          normal: createCardIcon(asCard.imageUrl, false),
+          active: createCardIcon(asCard.imageUrl, true),
+        };
+      }
+    });
+    return cache;
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <>
       {collectedCards.map((card) => {
@@ -44,13 +80,22 @@ const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay, drawingSegment, 
         const dimmed =
           selectedDay !== null &&
           selectedDay !== undefined &&
-          card.collectionDay !== selectedDay;
+          (!isInRoute(card.id) || card.collectionDay !== selectedDay);
         const asCard = anythingsearchCards[card.id];
+
+        const icons = iconCache[card.id];
+        let icon;
+        if (icons) {
+          icon = inRoute ? icons.active : icons.normal;
+        } else {
+          icon = inRoute ? defaultIconActive : defaultIcon;
+        }
+
         return (
           <Marker
             key={card.id}
             position={card.coordinates}
-            icon={inRoute ? manholeIconActive : manholeIcon}
+            icon={icon}
             opacity={dimmed ? 0.3 : 1}
             eventHandlers={{
               click: (e) => {

@@ -33,9 +33,10 @@ Always keep the Tasks section up to date — mark tasks as done when completed, 
 - [x] Export / Share — generate shareable URL via URL hash and allow GPX file export of routes
 - [x] Add integration with https://anythingsearch.info/ - allow users to select manhole cards from there, and also fetch manhole card information from there.
 - [x] "Closest Card I Missed" Layer — show uncollected cards with greyed-out markers and display how close they were to each day's route
-- [ ] Replace the map icon pins with the actual pictures of the cards.
-- [ ] Dark Mode / Map Style Switcher — add Leaflet layer control to toggle between CartoDB Light, OpenStreetMap, and CartoDB Dark Matter
-- [ ] Responsive / Mobile Layout — make map full-screen on small viewports with a bottom drawer/sheet for the stop list
+- [x] Currently the map highlights specific locations when a day is selected, even when the location hasn't been added to that day's route. Fix this.
+- [x] Replace the map icon pins with the actual pictures of the cards.
+- [x] Dark Mode / Map Style Switcher — add Leaflet layer control to toggle between CartoDB Light, OpenStreetMap, and CartoDB Dark Matter
+- [x] Responsive / Mobile Layout — make map full-screen on small viewports with a bottom drawer/sheet for the stop list
 
 ## Feature Ideas
 
