@@ -606,6 +606,49 @@ body {
 .photo-gallery-btn { display: block; width: 100%; margin-top: 6px; padding: 6px 0; border: 1px solid #ddd; border-radius: 6px; background: white; color: #666; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.8em; cursor: pointer; transition: all 0.15s ease; }
 .photo-gallery-btn:hover { border-color: #6A0DAD; color: #6A0DAD; }
 
+/* --- AnythingSearch Integration --- */
+.anythingsearch-thumb-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.anythingsearch-thumb {
+  max-height: 80px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.anythingsearch-thumb:hover {
+  border-color: #8B5CF6;
+}
+
+.anythingsearch-link-btn {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  color: #666;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.anythingsearch-link-btn:hover {
+  border-color: #8B5CF6;
+  color: #8B5CF6;
+}
+
 /* --- Walking Stats --- */
 .walking-stats {
   background: white;

@@ -12,7 +12,9 @@ import DayPicker from "./DayPicker";
 import WardHeatmap from "./WardHeatmap";
 import WalkingStats from "./WalkingStats";
 import ExportShare from "./ExportShare";
+import MissedCardsLayer from "./MissedCardsLayer";
 import useRoute from "./useRoute";
+import manholeCards from "./data/manholeCards.json";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -55,6 +57,7 @@ function App() {
   const [flyTarget, setFlyTarget] = React.useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
   const [showHeatmap, setShowHeatmap] = useState(false);
+  const [showMissedCards, setShowMissedCards] = useState(false);
 
   const handleLocate = useCallback((stop) => {
     setFlyTarget(stop.coordinates);
@@ -77,6 +80,12 @@ function App() {
           onClick={() => setShowHeatmap((v) => !v)}
         >
           {showHeatmap ? "Hide Ward Heatmap" : "Show Ward Heatmap"}
+        </button>
+        <button
+          className={`heatmap-toggle-btn${showMissedCards ? " active" : ""}`}
+          onClick={() => setShowMissedCards((v) => !v)}
+        >
+          {showMissedCards ? "Hide Missed Cards" : "Show Missed Cards"}
         </button>
         <ExportShare stops={stops} segments={segments} />
       </div>
@@ -123,6 +132,13 @@ function App() {
             finishDrawing={finishDrawing}
           />
           <WardHeatmap visible={showHeatmap} />
+          <MissedCardsLayer
+            visible={showMissedCards}
+            cards={manholeCards}
+            segments={segments}
+            selectedDay={selectedDay}
+            stops={stops}
+          />
           {flyTarget && <FlyTo coordinates={flyTarget} />}
         </MapContainer>
       </div>

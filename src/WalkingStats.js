@@ -5,7 +5,8 @@ import { segmentKey } from "./useRoute";
 const WALK_SPEED_KMH = 5;
 const STEPS_PER_KM = 1300;
 
-const days = [...new Set(manholeCards.map((c) => c.collectionDay))].sort(
+const collectedCards = manholeCards.filter((c) => c.collected !== false);
+const days = [...new Set(collectedCards.map((c) => c.collectionDay))].sort(
   (a, b) => a - b
 );
 

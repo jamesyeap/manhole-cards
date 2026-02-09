@@ -6,9 +6,11 @@ import manholeCards from "./data/manholeCards.json";
 function WardHeatmap({ visible }) {
   const wardCounts = useMemo(() => {
     const counts = {};
-    manholeCards.forEach((card) => {
-      counts[card.ward] = (counts[card.ward] || 0) + 1;
-    });
+    manholeCards
+      .filter((c) => c.collected !== false)
+      .forEach((card) => {
+        counts[card.ward] = (counts[card.ward] || 0) + 1;
+      });
     return counts;
   }, []);
 

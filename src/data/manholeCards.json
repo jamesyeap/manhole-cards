@@ -9,6 +9,7 @@
     "distributionAddress": "Chiyoda-ku, Otemachi 2-6-3",
     "category": "culture",
     "collectionDay": 1,
+    "collected": true,
     "photos": []
   },
   {
@@ -21,6 +22,7 @@
     "distributionAddress": "Koto-ku, Ariake 2-3-5",
     "category": "landmark",
     "collectionDay": 1,
+    "collected": true,
     "photos": []
   },
   {
@@ -33,6 +35,7 @@
     "distributionAddress": "Taito-ku, Ueno Park 1-60",
     "category": "nature",
     "collectionDay": 1,
+    "collected": true,
     "photos": []
   },
   {
@@ -45,6 +48,7 @@
     "distributionAddress": "Katsushika-ku, Shibamata 7-1-5",
     "category": "character",
     "collectionDay": 2,
+    "collected": true,
     "photos": []
   },
   {
@@ -57,6 +61,7 @@
     "distributionAddress": "Shinagawa-ku, Oi 1-14-1",
     "category": "culture",
     "collectionDay": 4,
+    "collected": true,
     "photos": []
   },
   {
@@ -69,6 +74,7 @@
     "distributionAddress": "Chiyoda-ku, Kudan-Minami 1-6-17",
     "category": "nature",
     "collectionDay": 1,
+    "collected": true,
     "photos": []
   },
   {
@@ -81,6 +87,7 @@
     "distributionAddress": "Setagaya-ku, Taishido 4-1-1",
     "category": "character",
     "collectionDay": 4,
+    "collected": true,
     "photos": []
   },
   {
@@ -93,6 +100,7 @@
     "distributionAddress": "Shibuya-ku, Sendagaya 1-6-5",
     "category": "landmark",
     "collectionDay": 3,
+    "collected": true,
     "photos": []
   },
   {
@@ -105,6 +113,7 @@
     "distributionAddress": "Suginami-ku, Asagaya-Minami 3-2-19",
     "category": "art",
     "collectionDay": 3,
+    "collected": true,
     "photos": []
   },
   {
@@ -117,6 +126,7 @@
     "distributionAddress": "Toshima-ku, Higashi-Ikebukuro 1-20-10",
     "category": "art",
     "collectionDay": 2,
+    "collected": true,
     "photos": []
   },
   {
@@ -129,6 +139,7 @@
     "distributionAddress": "Kita-ku, Akabane-Nishi 1-6-1-301",
     "category": "culture",
     "collectionDay": 2,
+    "collected": true,
     "photos": []
   },
   {
@@ -141,6 +152,7 @@
     "distributionAddress": "Adachi-ku, Senju 1-5-7",
     "category": "culture",
     "collectionDay": 2,
+    "collected": true,
     "photos": []
   },
   {
@@ -153,6 +165,7 @@
     "distributionAddress": "Shinagawa-ku, Ebara 4-5-28",
     "category": "landmark",
     "collectionDay": 4,
+    "collected": true,
     "photos": []
   },
   {
@@ -165,6 +178,7 @@
     "distributionAddress": "Katsushika-ku, Tateishi 1-21-2",
     "category": "character",
     "collectionDay": 2,
+    "collected": true,
     "photos": []
   },
   {
@@ -177,6 +191,7 @@
     "distributionAddress": "Shinjuku-ku, Shinjuku 3-37-2",
     "category": "character",
     "collectionDay": 3,
+    "collected": true,
     "photos": []
   },
   {
@@ -189,6 +204,7 @@
     "distributionAddress": "Taito-ku, Nishi-Asakusa 3-25-16",
     "category": "landmark",
     "collectionDay": 1,
+    "collected": true,
     "photos": []
   },
   {
@@ -201,6 +217,7 @@
     "distributionAddress": "Nerima-ku, Nerima 1-17-1 Coconeri 3F",
     "category": "art",
     "collectionDay": 3,
+    "collected": true,
     "photos": []
   },
   {
@@ -213,6 +230,7 @@
     "distributionAddress": "Minato-ku, Shiba 5-36-4 Fuda-no-Tsuji Square 1F",
     "category": "landmark",
     "collectionDay": 4,
+    "collected": true,
     "photos": []
   },
   {
@@ -225,6 +243,7 @@
     "distributionAddress": "Sumida-ku, Mukojima 1-23-9",
     "category": "art",
     "collectionDay": 1,
+    "collected": true,
     "photos": []
   },
   {
@@ -237,6 +256,127 @@
     "distributionAddress": "Itabashi-ku, Itabashi 3-14-15",
     "category": "culture",
     "collectionDay": 5,
+    "collected": true,
+    "photos": []
+  },
+  {
+    "id": "13-100-U001",
+    "name": "Nakano Broadway Design",
+    "ward": "Nakano",
+    "description": "Celebrates Nakano Broadway, the iconic otaku shopping complex famous for vintage toys, manga, and anime collectibles.",
+    "coordinates": [35.7078, 139.6650],
+    "distributionLocation": "Nakano Sunplaza",
+    "distributionAddress": "Nakano-ku, Nakano 4-1-1",
+    "category": "culture",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U002",
+    "name": "Bunkyo Koishikawa Garden",
+    "ward": "Bunkyo",
+    "description": "Features the scenic Koishikawa Korakuen Garden, one of Tokyo's oldest and most beautiful Edo-period landscape gardens.",
+    "coordinates": [35.7055, 139.7485],
+    "distributionLocation": "Bunkyo Civic Center",
+    "distributionAddress": "Bunkyo-ku, Kasuga 1-16-21",
+    "category": "nature",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U003",
+    "name": "Meguro River Cherry Blossoms",
+    "ward": "Meguro",
+    "description": "Depicts the famous Meguro River lined with over 800 cherry blossom trees, one of Tokyo's most popular hanami spots.",
+    "coordinates": [35.6340, 139.7100],
+    "distributionLocation": "Meguro Tourism Association",
+    "distributionAddress": "Meguro-ku, Kamimeguro 2-19-15",
+    "category": "nature",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U004",
+    "name": "Ota Haneda Airport Design",
+    "ward": "Ota",
+    "description": "Features motifs inspired by Haneda Airport and the industrial waterfront heritage of Ota ward.",
+    "coordinates": [35.5533, 139.7810],
+    "distributionLocation": "Ota Tourist Information Center",
+    "distributionAddress": "Ota-ku, Kamata 5-13-26",
+    "category": "landmark",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U005",
+    "name": "Chuo Nihonbashi Design",
+    "ward": "Chuo",
+    "description": "Celebrates the historic Nihonbashi Bridge, the traditional center of Tokyo and starting point of Japan's five major highways.",
+    "coordinates": [35.6840, 139.7745],
+    "distributionLocation": "Chuo City Tourist Information Center",
+    "distributionAddress": "Chuo-ku, Kyobashi 1-1-1",
+    "category": "culture",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U006",
+    "name": "Edogawa Kasai Seaside",
+    "ward": "Edogawa",
+    "description": "Features the seaside park and aquarium area of Kasai in Edogawa ward, a popular recreational destination on Tokyo Bay.",
+    "coordinates": [35.6435, 139.8615],
+    "distributionLocation": "Edogawa Ward Office",
+    "distributionAddress": "Edogawa-ku, Chuo 4-14-19",
+    "category": "nature",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U007",
+    "name": "Arakawa Toden Streetcar",
+    "ward": "Arakawa",
+    "description": "Depicts the beloved Tokyo Sakura Tram (Toden Arakawa Line), one of the last remaining streetcar lines in Tokyo.",
+    "coordinates": [35.7440, 139.7720],
+    "distributionLocation": "Arakawa Community Center",
+    "distributionAddress": "Arakawa-ku, Arakawa 2-25-3",
+    "category": "landmark",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U008",
+    "name": "Koto Fukagawa Festival",
+    "ward": "Koto",
+    "description": "Celebrates the Fukagawa Hachiman Festival, one of Tokyo's three great festivals held every three years in the Monzen-nakacho area.",
+    "coordinates": [35.6730, 139.7970],
+    "distributionLocation": "Koto Ward Cultural Center",
+    "distributionAddress": "Koto-ku, Tomioka 1-20-3",
+    "category": "culture",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U009",
+    "name": "Shibuya Yoyogi Park Design",
+    "ward": "Shibuya",
+    "description": "Features the expansive Yoyogi Park, a green oasis in central Tokyo known for its weekend flea markets and cultural events.",
+    "coordinates": [35.6720, 139.6965],
+    "distributionLocation": "Yoyogi Park Information Center",
+    "distributionAddress": "Shibuya-ku, Yoyogi Kamizonocho 2-1",
+    "category": "nature",
+    "collected": false,
+    "photos": []
+  },
+  {
+    "id": "13-100-U010",
+    "name": "Toshima Sugamo Design",
+    "ward": "Toshima",
+    "description": "Features the charming Sugamo Jizo-dori shopping street, known as 'Grandma's Harajuku' for its popularity with elderly shoppers.",
+    "coordinates": [35.7335, 139.7340],
+    "distributionLocation": "Sugamo Tourist Center",
+    "distributionAddress": "Toshima-ku, Sugamo 3-15-20",
+    "category": "culture",
+    "collected": false,
     "photos": []
   }
 ]

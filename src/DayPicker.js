@@ -1,9 +1,13 @@
 import React from "react";
 import manholeCards from "./data/manholeCards.json";
 
-const days = [...new Set(manholeCards.map((c) => c.collectionDay))].sort(
-  (a, b) => a - b
-);
+const days = [
+  ...new Set(
+    manholeCards
+      .filter((c) => c.collected !== false && c.collectionDay != null)
+      .map((c) => c.collectionDay)
+  ),
+].sort((a, b) => a - b);
 
 const DayPicker = ({ selectedDay, onSelectDay }) => {
   return (

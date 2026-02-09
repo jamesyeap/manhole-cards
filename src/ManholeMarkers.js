@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import manholeCards from "./data/manholeCards.json";
+import anythingsearchCards from "./data/anythingsearchCards.json";
 import PhotoGallery from "./PhotoGallery";
 
 const manholeIcon = new L.Icon({
@@ -27,17 +28,24 @@ const categoryColors = {
   art: "#EC4899",
 };
 
+function anythingsearchUrl(cardId) {
+  return `https://anythingsearch.info/mhcard-${cardId.toLowerCase()}/`;
+}
+
 const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay, drawingSegment, addDrawingPoint, finishDrawing }) => {
   const [photoCard, setPhotoCard] = useState(null);
 
+  const collectedCards = manholeCards.filter((c) => c.collected !== false);
+
   return (
     <>
-      {manholeCards.map((card) => {
+      {collectedCards.map((card) => {
         const inRoute = isInRoute(card.id);
         const dimmed =
           selectedDay !== null &&
           selectedDay !== undefined &&
           card.collectionDay !== selectedDay;
+        const asCard = anythingsearchCards[card.id];
         return (
           <Marker
             key={card.id}
@@ -75,6 +83,28 @@ const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay, drawingSegment, 
                     {card.distributionAddress}
                   </p>
                 </div>
+                {asCard && asCard.imageUrl && (
+                  <a
+                    href={anythingsearchUrl(card.id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="anythingsearch-thumb-link"
+                  >
+                    <img
+                      src={asCard.imageUrl}
+                      alt={`${card.name} on AnythingSearch`}
+                      className="anythingsearch-thumb"
+                    />
+                  </a>
+                )}
+                <a
+                  href={anythingsearchUrl(card.id)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="anythingsearch-link-btn"
+                >
+                  View on AnythingSearch ↗
+                </a>
                 <button
                   className={`route-toggle-btn ${inRoute ? "in-route" : ""}`}
                   onClick={() => onToggleStop(card)}
