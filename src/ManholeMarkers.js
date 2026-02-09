@@ -27,7 +27,7 @@ const categoryColors = {
   art: "#EC4899",
 };
 
-const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay }) => {
+const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay, drawingSegment, addDrawingPoint, finishDrawing }) => {
   const [photoCard, setPhotoCard] = useState(null);
 
   return (
@@ -44,6 +44,18 @@ const ManholeMarkers = ({ onToggleStop, isInRoute, selectedDay }) => {
             position={card.coordinates}
             icon={inRoute ? manholeIconActive : manholeIcon}
             opacity={dimmed ? 0.3 : 1}
+            eventHandlers={{
+              click: (e) => {
+                if (drawingSegment) {
+                  e.target.closePopup();
+                  if (card.id === drawingSegment.toStop.id) {
+                    finishDrawing();
+                  } else {
+                    addDrawingPoint({ lat: card.coordinates[0], lng: card.coordinates[1] });
+                  }
+                }
+              },
+            }}
           >
             <Popup maxWidth={280} className="manhole-popup">
               <div className="manhole-card-popup">

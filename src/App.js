@@ -10,6 +10,8 @@ import RouteLines from "./RouteLines";
 import TripStats from "./TripStats";
 import DayPicker from "./DayPicker";
 import WardHeatmap from "./WardHeatmap";
+import WalkingStats from "./WalkingStats";
+import ExportShare from "./ExportShare";
 import useRoute from "./useRoute";
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -64,12 +66,20 @@ function App() {
       <h1 className="app-title">Manhole Card Route Planner</h1>
       <TripStats totalDistance={totalDistance} />
       <DayPicker selectedDay={selectedDay} onSelectDay={setSelectedDay} />
-      <button
-        className={`heatmap-toggle-btn${showHeatmap ? " active" : ""}`}
-        onClick={() => setShowHeatmap((v) => !v)}
-      >
-        {showHeatmap ? "Hide Ward Heatmap" : "Show Ward Heatmap"}
-      </button>
+      <WalkingStats
+        stops={stops}
+        segments={segments}
+        segmentDistances={segmentDistances}
+      />
+      <div className="app-controls">
+        <button
+          className={`heatmap-toggle-btn${showHeatmap ? " active" : ""}`}
+          onClick={() => setShowHeatmap((v) => !v)}
+        >
+          {showHeatmap ? "Hide Ward Heatmap" : "Show Ward Heatmap"}
+        </button>
+        <ExportShare stops={stops} segments={segments} />
+      </div>
       <div className="app-layout">
         <StopList
           stops={stops}
@@ -102,8 +112,16 @@ function App() {
             segments={segments}
             drawingSegment={drawingSegment}
             onMapClick={addDrawingPoint}
+            selectedDay={selectedDay}
           />
-          <ManholeMarkers onToggleStop={toggleStop} isInRoute={isInRoute} selectedDay={selectedDay} />
+          <ManholeMarkers
+            onToggleStop={toggleStop}
+            isInRoute={isInRoute}
+            selectedDay={selectedDay}
+            drawingSegment={drawingSegment}
+            addDrawingPoint={addDrawingPoint}
+            finishDrawing={finishDrawing}
+          />
           <WardHeatmap visible={showHeatmap} />
           {flyTarget && <FlyTo coordinates={flyTarget} />}
         </MapContainer>

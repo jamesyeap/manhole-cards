@@ -30,12 +30,17 @@ const RouteLines = ({
   segments,
   drawingSegment,
   onMapClick,
+  selectedDay,
 }) => {
+  const filteredStops = selectedDay
+    ? stops.filter((s) => s.collectionDay === selectedDay)
+    : stops;
+
   return (
     <>
-      {stops.map((stop, i) => {
-        if (i >= stops.length - 1) return null;
-        const next = stops[i + 1];
+      {filteredStops.map((stop, i) => {
+        if (i >= filteredStops.length - 1) return null;
+        const next = filteredStops[i + 1];
         const key = segmentKey(stop, next);
         const points = segments[key];
         if (!points) return null;

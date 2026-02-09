@@ -26,7 +26,14 @@ Always keep the Tasks section up to date — mark tasks as done when completed, 
 ## Tasks
 
 - [x] Fix StopList sidebar to filter stops by selected day (currently shows all stops regardless of day selection)
-- [ ] Fix RouteLines to only display route segments for the currently selected day (currently shows all routes regardless of day selection)
+- [x] Fix RouteLines to only display route segments for the currently selected day (currently shows all routes regardless of day selection)
+- [x]  Fix StopList sidebar to allow the user to finalize the route when a specific day is selected, and not in the "All" days selection.
+- [x]  Fix route to allow user to click on the destination to finalize the route, because currently when the user clicks on a destination in drawing mode, the details of the destination are displayed instead of the route being extended.
+- [x] Walking Stats Per Day — show per-day walking stats (distance, steps, time) as bar charts or sparklines in the sidebar
+- [x] Export / Share — generate shareable URL via URL hash and allow GPX file export of routes
+- [ ] "Closest Card I Missed" Layer — show uncollected cards with greyed-out markers and display how close they were to each day's route
+- [ ] Dark Mode / Map Style Switcher — add Leaflet layer control to toggle between CartoDB Light, OpenStreetMap, and CartoDB Dark Matter
+- [ ] Responsive / Mobile Layout — make map full-screen on small viewports with a bottom drawer/sheet for the stop list
 
 ## Feature Ideas
 

@@ -552,6 +552,16 @@ body {
   color: white;
 }
 
+/* --- App Controls Row --- */
+.app-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
 /* --- Ward Heatmap Toggle --- */
 .heatmap-toggle-btn {
   font-family: 'Quicksand', sans-serif;
@@ -564,7 +574,6 @@ body {
   color: #888;
   cursor: pointer;
   transition: all 0.15s ease;
-  margin-bottom: 16px;
 }
 
 .heatmap-toggle-btn:hover {
@@ -596,3 +605,158 @@ body {
 .photo-gallery-nav button:disabled { opacity: 0.3; cursor: default; }
 .photo-gallery-btn { display: block; width: 100%; margin-top: 6px; padding: 6px 0; border: 1px solid #ddd; border-radius: 6px; background: white; color: #666; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.8em; cursor: pointer; transition: all 0.15s ease; }
 .photo-gallery-btn:hover { border-color: #6A0DAD; color: #6A0DAD; }
+
+/* --- Walking Stats --- */
+.walking-stats {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  width: 95vw;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+.walking-stats-title {
+  margin: 0 0 14px;
+  font-size: 1em;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+}
+
+.walking-stats-chart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 12px;
+  height: 120px;
+  padding: 0 8px;
+}
+
+.walking-stats-bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 60px;
+}
+
+.walking-stats-bar-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.walking-stats-bar {
+  width: 100%;
+  min-height: 4px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: height 0.3s ease;
+}
+
+.walking-stats-bar-value {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #555;
+  white-space: nowrap;
+}
+
+.walking-stats-bar-label {
+  margin-top: 6px;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: #888;
+}
+
+.walking-stats-legend {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+.walking-stats-legend-item {
+  font-size: 0.7em;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.walking-stats-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.walking-stats-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8em;
+}
+
+.walking-stats-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+}
+
+.walking-stats-detail-day {
+  font-weight: 600;
+  color: #555;
+  min-width: 42px;
+}
+
+.walking-stats-detail-values {
+  color: #777;
+  font-weight: 500;
+}
+
+.walking-stats-no-route {
+  color: #ccc;
+  font-style: italic;
+}
+
+/* --- Export / Share --- */
+.export-share {
+  display: flex;
+  gap: 8px;
+}
+
+.export-share-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 6px 16px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.export-share-btn:hover {
+  border-color: #6A0DAD;
+  color: #6A0DAD;
+}
+
+.export-share-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.export-share-btn:disabled:hover {
+  border-color: #ddd;
+  color: #888;
+}

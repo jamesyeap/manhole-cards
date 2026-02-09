@@ -87,7 +87,6 @@ const StopList = ({
 
                 {i < filteredStops.length - 1 && (
                   <SegmentControl
-                    segIndex={originalIndex}
                     fromStop={stop}
                     toStop={filteredStops[i + 1]}
                     segments={segments}
@@ -116,7 +115,6 @@ const StopList = ({
 };
 
 const SegmentControl = ({
-  segIndex,
   fromStop,
   toStop,
   segments,
@@ -175,14 +173,14 @@ const SegmentControl = ({
             <button
               className="segment-btn redraw"
               disabled={isOtherDrawing}
-              onClick={() => onStartDrawing(segIndex)}
+              onClick={() => onStartDrawing(fromStop, toStop)}
             >
               Redraw
             </button>
             <button
               className="segment-btn clear-seg"
               disabled={isOtherDrawing}
-              onClick={() => onClearSegment(segIndex)}
+              onClick={() => onClearSegment(fromStop, toStop)}
             >
               Clear
             </button>
@@ -192,7 +190,7 @@ const SegmentControl = ({
         <button
           className="segment-draw-btn"
           disabled={isOtherDrawing}
-          onClick={() => onStartDrawing(segIndex)}
+          onClick={() => onStartDrawing(fromStop, toStop)}
         >
           Draw route between stops
         </button>

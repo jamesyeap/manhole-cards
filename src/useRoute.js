@@ -1,9 +1,21 @@
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import manholeCards from "./data/manholeCards.json";
 import { computePolylineDistance } from "./distance";
+import { decodeRouteData } from "./ExportShare";
 
 const STOPS_KEY = "manhole-route-stops";
 const SEGMENTS_KEY = "manhole-route-segments";
+
+function loadFromHash() {
+  const hash = window.location.hash;
+  if (!hash || hash.length <= 1) return null;
+  const result = decodeRouteData(hash);
+  if (result && result.stops.length > 0) {
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    return result;
+  }
+  return null;
+}
 
 function loadStops() {
   try {
@@ -42,8 +54,13 @@ function saveSegments(segments) {
 export { segmentKey };
 
 export default function useRoute() {
-  const [stops, setStops] = useState(loadStops);
-  const [segments, setSegments] = useState(loadSegments);
+  const hashData = useRef(loadFromHash());
+  const [stops, setStops] = useState(() =>
+    hashData.current ? hashData.current.stops : loadStops()
+  );
+  const [segments, setSegments] = useState(() =>
+    hashData.current ? hashData.current.segments : loadSegments()
+  );
   const [drawingSegment, setDrawingSegment] = useState(null);
 
   useEffect(() => {
@@ -87,19 +104,17 @@ export default function useRoute() {
   );
 
   const startDrawing = useCallback(
-    (segIndex) => {
-      const a = stops[segIndex];
-      const b = stops[segIndex + 1];
-      if (!a || !b) return;
-      const key = segmentKey(a, b);
+    (fromStop, toStop) => {
+      if (!fromStop || !toStop) return;
+      const key = segmentKey(fromStop, toStop);
       setDrawingSegment({
         key,
-        fromStop: a,
-        toStop: b,
-        points: [a.coordinates],
+        fromStop,
+        toStop,
+        points: [fromStop.coordinates],
       });
     },
-    [stops],
+    [],
   );
 
   const addDrawingPoint = useCallback((latlng) => {
@@ -130,18 +145,16 @@ export default function useRoute() {
   }, []);
 
   const clearSegment = useCallback(
-    (segIndex) => {
-      const a = stops[segIndex];
-      const b = stops[segIndex + 1];
-      if (!a || !b) return;
-      const key = segmentKey(a, b);
+    (fromStop, toStop) => {
+      if (!fromStop || !toStop) return;
+      const key = segmentKey(fromStop, toStop);
       setSegments((prev) => {
         const next = { ...prev };
         delete next[key];
         return next;
       });
     },
-    [stops],
+    [],
   );
 
   const segmentDistances = useMemo(() => {
