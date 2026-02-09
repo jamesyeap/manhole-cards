@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/manhole-cards/static/css/main.a66c7d9e.css",
-    "main.js": "/manhole-cards/static/js/main.09878493.js",
+    "main.css": "/manhole-cards/static/css/main.408ffcba.css",
+    "main.js": "/manhole-cards/static/js/main.9f13fcfc.js",
     "static/js/453.a003e993.chunk.js": "/manhole-cards/static/js/453.a003e993.chunk.js",
     "index.html": "/manhole-cards/index.html",
-    "main.a66c7d9e.css.map": "/manhole-cards/static/css/main.a66c7d9e.css.map",
-    "main.09878493.js.map": "/manhole-cards/static/js/main.09878493.js.map",
+    "main.408ffcba.css.map": "/manhole-cards/static/css/main.408ffcba.css.map",
+    "main.9f13fcfc.js.map": "/manhole-cards/static/js/main.9f13fcfc.js.map",
     "453.a003e993.chunk.js.map": "/manhole-cards/static/js/453.a003e993.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a66c7d9e.css",
-    "static/js/main.09878493.js"
+    "static/css/main.408ffcba.css",
+    "static/js/main.9f13fcfc.js"
   ]
 }
